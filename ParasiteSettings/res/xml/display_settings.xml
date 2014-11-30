@@ -3,4 +3,10 @@
         android:key="display_settings"
         android:title="@string/display_pref_title">
 
+    <com.android.settings.custom.preference.GlobalSettingSwitchPreference
+        android:key="wake_when_plugged_or_unplugged"
+        android:title="@string/wake_when_plugged_or_unplugged_title"
+        android:summary="@string/wake_when_plugged_or_unplugged_summary"
+        android:defaultValue="@*android:bool/config_unplugTurnsOnScreen" />
+
 </PreferenceScreen>

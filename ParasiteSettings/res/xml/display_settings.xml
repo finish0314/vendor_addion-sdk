@@ -3,6 +3,18 @@
         android:key="display_settings"
         android:title="@string/display_pref_title">
 
+    <com.android.settings.custom.preference.SecureSettingSwitchPreference
+        android:key="feature_touch_hovering"
+        android:title="@string/touchscreen_hovering_title"
+        android:summary="@string/touchscreen_hovering_summary"
+        android:defaultValue="false" />
+
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="high_touch_sensitivity_enable"
+        android:title="@string/high_touch_sensitivity_title"
+        android:summary="@string/high_touch_sensitivity_summary"
+        android:defaultValue="false" />
+
     <com.android.settings.custom.preference.GlobalSettingSwitchPreference
         android:key="wake_when_plugged_or_unplugged"
         android:title="@string/wake_when_plugged_or_unplugged_title"

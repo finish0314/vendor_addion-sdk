@@ -76,6 +76,17 @@
         </activity>
 
         <activity
+            android:name=".display.cutout.DisplayCutoutForceFullscreenSettingsActivity"
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true"
+            android:label="@string/display_cutout_force_fullscreen_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".sound.SoundSettingsActivity"
             android:theme="@style/Theme.SubSettingsBase"
             android:exported="true"

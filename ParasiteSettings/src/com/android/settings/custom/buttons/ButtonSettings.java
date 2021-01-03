@@ -44,6 +44,7 @@ import com.android.settings.custom.R;
 
 import com.android.settings.custom.buttons.ButtonSettingsUtils;
 
+import com.android.internal.custom.hardware.LineageHardwareManager;
 import com.android.internal.util.custom.NavbarUtils;
 
 import java.util.List;
@@ -62,6 +63,7 @@ public class ButtonSettings extends PreferenceFragment implements
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
     private static final String DISABLE_NAV_KEYS = "disable_nav_keys";
+    private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
 
     private static final String CATEGORY_HOME = "home_key";
     private static final String CATEGORY_BACK = "back_key";
@@ -82,6 +84,7 @@ public class ButtonSettings extends PreferenceFragment implements
     private SwitchPreference mCameraSleepOnRelease;
     private SwitchPreference mCameraLaunch;
     private SwitchPreference mDisableNavigationKeys;
+    private SwitchPreference mSwapCapacitiveKeys;
 
     private Handler mHandler;
 
@@ -132,6 +135,12 @@ public class ButtonSettings extends PreferenceFragment implements
         // Force Navigation bar related options
         mDisableNavigationKeys = findPreference(DISABLE_NAV_KEYS);
 
+        mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
+        if (mSwapCapacitiveKeys != null && !isKeySwapperSupported(getActivity())) {
+            prefScreen.removePreference(mSwapCapacitiveKeys);
+            mSwapCapacitiveKeys = null;
+        }
+
         Action defaultHomeLongPressAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_longPressOnHomeBehavior));
         Action defaultHomeDoubleTapAction = Action.fromIntSafe(res.getInteger(
@@ -159,6 +168,7 @@ public class ButtonSettings extends PreferenceFragment implements
             // Remove keys that can be provided by the navbar
             updateDisableNavkeysOption();
             updateDisableNavkeysCategories(mDisableNavigationKeys.isChecked());
+            mDisableNavigationKeys.setDisableDependentsState(true);
         } else {
             prefScreen.removePreference(mDisableNavigationKeys);
         }
@@ -307,6 +317,11 @@ public class ButtonSettings extends PreferenceFragment implements
         }
     }
 
+    private static boolean isKeySwapperSupported(Context context) {
+        final LineageHardwareManager hardware = LineageHardwareManager.getInstance(context);
+        return hardware.isSupported(LineageHardwareManager.FEATURE_KEY_SWAP);
+    }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -405,6 +420,9 @@ public class ButtonSettings extends PreferenceFragment implements
         }
         if (appSwitchCategory != null) {
             appSwitchCategory.setEnabled(!navbarEnabled);
+        }
+        if (mSwapCapacitiveKeys != null){
+            mSwapCapacitiveKeys.setEnabled(!navbarEnabled);
         }
     }
 

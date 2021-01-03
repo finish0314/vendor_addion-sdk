@@ -3,6 +3,12 @@
         android:key="button_settings"
         android:title="@string/button_pref_title">
 
+    <com.android.settings.custom.preference.SecureSettingSwitchPreference
+        android:key="swap_capacitive_keys"
+        android:title="@string/swap_capacitive_keys_title"
+        android:summary="@string/swap_capacitive_keys_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="home_key"
         android:title="@string/hardware_keys_home_key_title" >

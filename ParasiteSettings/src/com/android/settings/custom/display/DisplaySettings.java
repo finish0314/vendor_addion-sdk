@@ -13,6 +13,7 @@ public class DisplaySettings extends PreferenceFragment {
     private static final String CUTOUT_FROCE_FULL_SCREEN_PREF = "display_cutout_force_fullscreen_settings";
     private CutoutFullscreenController mCutoutForceFullscreenSettings;
 
+    private static final String KEY_HIGH_TOUCH_POLLING_RATE = "high_touch_polling_rate_enable";
     private static final String KEY_HIGH_TOUCH_SENSITIVITY = "high_touch_sensitivity_enable";
     private static final String KEY_TOUCH_HOVERING = "feature_touch_hovering";
     private LineageHardwareManager mHardware;
@@ -21,6 +22,8 @@ public class DisplaySettings extends PreferenceFragment {
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.display_settings);
 
+        final Preference highTouchPollingRatePref =
+                (Preference) getPreferenceScreen().findPreference(KEY_HIGH_TOUCH_POLLING_RATE);
         final Preference highTouchSensitivityPref =
                 (Preference) getPreferenceScreen().findPreference(KEY_HIGH_TOUCH_SENSITIVITY);
         final Preference touchHoveringPref =
@@ -28,6 +31,9 @@ public class DisplaySettings extends PreferenceFragment {
 
         mHardware = LineageHardwareManager.getInstance(getActivity());
 
+        if (!mHardware.isSupported(LineageHardwareManager.FEATURE_HIGH_TOUCH_POLLING_RATE)){
+            getPreferenceScreen().removePreference(highTouchPollingRatePref);
+        }
         if (!mHardware.isSupported(LineageHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY)){
             getPreferenceScreen().removePreference(highTouchSensitivityPref);
         }

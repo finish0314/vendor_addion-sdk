@@ -15,6 +15,7 @@ android_app {
         "androidx.core_core",
         "androidx.preference_preference",
         "SettingsLib",
+        "com.google.android.material_material",
         "com.github.bumptech.glide_glide",
         "custom-preference",
     ],

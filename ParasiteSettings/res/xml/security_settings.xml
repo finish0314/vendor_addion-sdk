@@ -3,6 +3,13 @@
         android:key="security_settings"
         android:title="@string/security_pref_title">
 
+    <com.android.settings.custom.preference.GlobalSettingSwitchPreference
+        android:order="91"
+        android:key="pm_downgrade_allowed"
+        android:title="@string/app_downgrade_title"
+        android:summary="@string/app_downgrade_summary"
+        android:defaultValue="false"/>
+
     <com.android.settings.custom.preference.SecureSettingSwitchPreference
         android:order="92"
         android:key="window_ignore_secure"

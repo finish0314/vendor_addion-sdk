@@ -35,4 +35,9 @@
             android:targetPackage="com.android.settings.custom" />
     </Preference>
 
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="fingerprint_lockout"
+        android:title="@string/fingerprint_lockout_title"
+        android:summary="@string/fingerprint_lockout_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>

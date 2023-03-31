@@ -3,4 +3,9 @@
         android:key="network_settings"
         android:title="@string/network_pref_title">
 
+    <com.android.settings.custom.preference.SystemPropertySwitchPreference
+        android:key="persist.sys.radio.force_lte_ca"
+        android:title="@string/force_lte_ca_title"
+        android:summary="@string/force_lte_ca_summary"
+        android:defaultValue="false"/>
 </PreferenceScreen>

@@ -73,4 +73,8 @@
 
     <!-- Network Settings -->
     <string name="network_pref_title">Network Settings</string>
+
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca_title">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
 </resources>

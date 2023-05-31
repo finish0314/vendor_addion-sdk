@@ -108,6 +108,17 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".security.hidedevstatus.HideDeveloperStatusPreferenceActivity"
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true"
+            android:label="@string/hide_developer_status_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
 

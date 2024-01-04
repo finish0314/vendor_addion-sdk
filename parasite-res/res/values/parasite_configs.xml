@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Device model (Build.MODEL) to spoof for netflix, if not empty -->
+    <string name="config_netflixSpoofModel" translatable="false"></string>
+
+    <!-- Whether Pixel props is enabled -->
+    <bool name="config_enablePixelProps">true</bool>
+
+    <!-- Build properties from a GMS certified device -->
+    <string-array name="config_certifiedBuildProperties" translatable="false">
+      <!--
+        <item>Build.BRAND</item>
+        <item>Build.MANUFACTURER</item>
+        <item>Build.ID</item>
+        <item>Build.DEVICE</item>
+        <item>Build.PRODUCT</item>
+        <item>Build.MODEL</item>
+        <item>Build.FINGERPRINT</item>
+        <item>Build.TYPE</item>
+        <item>Build.TAGS</item>
+      -->
+    </string-array>
+
+    <!-- Spoof GMS as Pixel Tablet -->
+    <bool name="config_spoofasTablet">false</bool>
+
+    <!-- Whether device has Google Tensor SoC -->
+    <bool name="config_hasTensorSoC">false</bool>
+
+    <!-- Define device configs on boot -->
+    <string-array name="global_device_configs_override" translatable="false">
+    </string-array>
+    <string-array name="device_configs_override" translatable="false">
+    </string-array>
+
+    <!-- The list of components which should be automatically disabled for a specific device.
+         Note: this MUST not be used to randomly disable components, ask for approval first! -->
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+    </string-array>
+
+    <!-- The list of components which should be automatically disabled for all devices. -->
+    <string-array name="config_globallyDisabledComponents" translatable="false">
+    </string-array>
+
+    <!-- The list of components which should be forced to be enabled. -->
+    <string-array name="config_forceEnabledComponents" translatable="false">
+    </string-array>
+
+    <!-- These are system packages exempted from privacy indicator -->
+    <string-array name="config_indicatorExemptedPackageNames" translatable="false">
+        <item>com.android.bluetooth</item>
+        <item>com.google.android.bluetooth</item>
+        <item>com.android.cellbroadcastservice</item>
+        <item>com.android.mms.service</item>
+        <item>com.android.networkstack.tethering</item>
+        <item>com.android.ons</item>
+        <item>com.android.phone</item>
+        <item>com.android.printspooler</item>
+        <item>com.android.providers.telephony</item>
+        <item>com.android.stk</item>
+        <item>com.android.systemui</item>
+        <item>com.google.android.settings.intelligence</item>
+        <item>com.mediatek.ims</item>
+        <item>com.qualcomm.qti.cne</item>
+        <item>com.shannon.imsservice</item>
+        <item>org.pixelexperience.faceunlock</item>
+    </string-array>
+
+    <!-- Whether to cancel fingerprint operation if not idle -->
+    <bool name="config_fpCancelIfNotIdle">false</bool>
+</resources>

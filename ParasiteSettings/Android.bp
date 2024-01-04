@@ -1,0 +1,42 @@
+android_app {
+    name: "ParasiteSettings",
+
+    srcs: [
+        "src/**/*.java",
+        "src/**/*.kt",
+        "src/**/*.aidl",  
+    ],
+
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+
+    static_libs: [
+        "androidx.core_core",
+        "androidx.preference_preference",
+        "SettingsLib",
+        "com.github.bumptech.glide_glide",
+        "custom-preference",
+    ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+
+    resource_dirs: ["res"],
+
+    defaults: [
+        "SettingsLibDefaults",
+    ],
+
+    required: [
+        "privapp-permissions-parasitesettings.xml",
+    ],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-parasitesettings.xml",
+    sub_dir: "permissions",
+    src: "privapp-permissions-parasitesettings.xml",
+    filename_from_src: true,
+}

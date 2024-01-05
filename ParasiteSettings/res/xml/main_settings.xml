@@ -36,4 +36,14 @@
             android:targetPackage="com.android.settings.custom" />
     </Preference>
 
+    <Preference
+        android:key="sound_settings"
+        android:title="@string/sound_pref_title"
+        android:icon="@drawable/ic_volume_up_24dp">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.android.settings.custom.sound.SoundSettingsActivity"
+            android:targetPackage="com.android.settings.custom" />
+    </Preference>
+
 </PreferenceScreen>

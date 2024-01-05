@@ -14,4 +14,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="parasite_settings_title">More Settings</string>
+
+    <!-- Advanced Settings -->
+    <string name="advanced_pref_title">Advanced Settings</string>
+    <string name="advanced_backup_title">Backup</string>
 </resources>

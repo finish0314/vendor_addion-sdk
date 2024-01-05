@@ -46,4 +46,14 @@
             android:targetPackage="com.android.settings.custom" />
     </Preference>
 
+    <Preference
+        android:key="security_settings"
+        android:title="@string/security_pref_title"
+        android:icon="@drawable/ic_settings_security">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.android.settings.custom.security.SecuritySettingsActivity"
+            android:targetPackage="com.android.settings.custom" />
+    </Preference>
+
 </PreferenceScreen>

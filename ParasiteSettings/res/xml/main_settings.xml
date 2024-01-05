@@ -15,4 +15,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- Custom Advanced Settings -->
+    <Preference
+        android:key="advanced_settings"
+        android:title="@string/advanced_pref_title"
+        android:icon="@drawable/ic_advanced_settings">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.android.settings.custom.advanced.AdvancedSettingsActivity"
+            android:targetPackage="com.android.settings.custom" />
+    </Preference>
+
 </PreferenceScreen>

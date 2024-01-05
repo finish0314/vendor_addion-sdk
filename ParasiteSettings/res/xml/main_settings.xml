@@ -26,4 +26,14 @@
             android:targetPackage="com.android.settings.custom" />
     </Preference>
 
+    <Preference
+        android:key="display_settings"
+        android:title="@string/display_pref_title"
+        android:icon="@drawable/ic_settings_display">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.android.settings.custom.display.DisplaySettingsActivity"
+            android:targetPackage="com.android.settings.custom" />
+    </Preference>
+
 </PreferenceScreen>

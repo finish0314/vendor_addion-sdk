@@ -27,6 +27,16 @@
     </Preference>
 
     <Preference
+        android:key="network_settings"
+        android:title="@string/network_pref_title"
+        android:icon="@drawable/ic_settings_wireless">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.android.settings.custom.network.NetworkSettingsActivity"
+            android:targetPackage="com.android.settings.custom" />
+    </Preference>
+
+    <Preference
         android:key="display_settings"
         android:title="@string/display_pref_title"
         android:icon="@drawable/ic_settings_display">

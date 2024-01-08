@@ -119,6 +119,17 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".network.NetworkSettingsActivity"
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true"
+            android:label="@string/network_pref_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
 

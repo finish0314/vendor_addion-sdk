@@ -70,4 +70,7 @@
     <!-- Hide developer status -->
     <string name="hide_developer_status_title">Hide developer status</string>
     <string name="hide_developer_status_summary">Hide developer status from apps</string>
+
+    <!-- Network Settings -->
+    <string name="network_pref_title">Network Settings</string>
 </resources>

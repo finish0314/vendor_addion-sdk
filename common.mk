@@ -28,5 +28,9 @@ ifndef LINEAGE_PLATFORM_REV
   LINEAGE_PLATFORM_REV := 0
 endif
 
+# Parasite Settings
+PRODUCT_PACKAGES += \
+    ParasiteSettings
+
 # Parasite Prebuilts
 $(call inherit-product-if-exists, vendor/parasite-prebuilts/config.mk)

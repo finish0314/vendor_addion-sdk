@@ -47,3 +47,9 @@ $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/org.li
 # Purge out the api stubs timestamp files (they're used as a dependency for checkapi-lineage)
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/docs/lineage-api-stubs*)
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/docs/lineage-system-api-stubs*)
+
+$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/APPS/ParasiteSettings_intermediates)
+$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/APPS/ParasiteSettings_intermediates)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/priv-app/ParasiteSettings)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/product/priv-app/ParasiteSettings)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/product/priv-app/ParasiteSettings)

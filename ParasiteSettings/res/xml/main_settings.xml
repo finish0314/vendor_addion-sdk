@@ -27,6 +27,16 @@
     </Preference>
 
     <Preference
+        android:key="button_settings"
+        android:title="@string/button_pref_title"
+        android:icon="@drawable/ic_button_settings">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.android.settings.custom.buttons.ButtonSettingsActivity"
+            android:targetPackage="com.android.settings.custom" />
+    </Preference>
+
+    <Preference
         android:key="display_settings"
         android:title="@string/display_pref_title"
         android:icon="@drawable/ic_settings_display">

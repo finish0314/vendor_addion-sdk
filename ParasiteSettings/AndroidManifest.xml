@@ -65,6 +65,17 @@
         </activity>
 
         <activity
+            android:name=".buttons.ButtonSettingsActivity"
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true"
+            android:label="@string/button_pref_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".display.DisplaySettingsActivity"
             android:theme="@style/Theme.SubSettingsBase"
             android:exported="true"

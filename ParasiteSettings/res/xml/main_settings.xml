@@ -37,6 +37,16 @@
     </Preference>
 
     <Preference
+        android:key="gesture_settings"
+        android:title="@string/gesture_pref_title"
+        android:icon="@drawable/ic_settings_gestures">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.android.settings.custom.gestures.GestureSettingsActivity"
+            android:targetPackage="com.android.settings.custom" />
+    </Preference>
+
+    <Preference
         android:key="display_settings"
         android:title="@string/display_pref_title"
         android:icon="@drawable/ic_settings_display">

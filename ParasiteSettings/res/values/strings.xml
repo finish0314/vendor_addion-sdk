@@ -29,6 +29,9 @@
     <!-- Display Settings -->
     <string name="display_pref_title">Display Settings</string>
 
+    <!-- Gesture Settings -->
+    <string name="gesture_pref_title">Gesture Settings</string>
+
     <!-- Wake on plug -->
     <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
     <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>

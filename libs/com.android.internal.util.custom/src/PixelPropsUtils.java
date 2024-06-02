@@ -231,9 +231,25 @@ public class PixelPropsUtils {
         certifiedProps = new HashMap<>(tMap);
     }
 
+    public static void setPropsForGphotos(Context context) {
+        if (context == null) return;
+
+        final String packageName = context.getPackageName();
+        if (packageName == null || packageName.isEmpty()) {
+            return;
+        }
+
+        if (packageName.equals("com.google.android.apps.photos")) {
+            if (SystemProperties.getBoolean("persist.sys.pixelprops.gphotos", false)) {
+                propsToChangePixelXL.forEach((k, v) -> setPropValue(k, v));
+            }
+        }
+    }
+
     public static void setProps(Context context) {
         if (!sEnablePixelProps) {
             dlog("Pixel props is disabled by config");
+            setPropsForGphotos(context);
             return;
         }
 
@@ -306,11 +322,7 @@ public class PixelPropsUtils {
                 || processName.toLowerCase().contains("search"))) {
                 propsToChange = propsToChangePixel5a;
             }
-            if (packageName.equals("com.google.android.apps.photos")) {
-                if (SystemProperties.getBoolean("persist.sys.pixelprops.gphotos", false)) {
-                    propsToChange = propsToChangePixelXL;
-                }
-            }
+            setPropsForGphotos(context);
         }
         if (propsToChange == null || propsToChange.isEmpty()) return;
         dlog("Defining props for: " + packageName);

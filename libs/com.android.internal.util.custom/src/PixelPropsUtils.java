@@ -98,12 +98,6 @@ public final class PixelPropsUtils {
                 "google/marlin/marlin:10/QP1A.191005.007.A3/5972272:user/release-keys"
             );
 
-    private static final Map<String, Object> propsToChangePixel5a =
-            createGoogleSpoofProps(
-                "Pixel 5a",
-                "google/barbet/barbet:14/AP2A.240805.005/12025142:user/release-keys"
-            );
-
     private static final Map<String, Object> propsToChangePixelTablet =
             createGoogleSpoofProps(
                 "Pixel Tablet",

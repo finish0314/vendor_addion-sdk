@@ -72,8 +72,6 @@ public final class PixelPropsUtils {
             SystemProperties.get("ro.product.model", Build.MODEL);
     private static final Boolean sDeviceIsPixel =
             SystemProperties.get("ro.product.manufacturer", "").toLowerCase().contains("google");
-    private static final Boolean sForceSpoofGmsProcess =
-            SystemProperties.getBoolean("persist.sys.pihooks.force.spoof.gms.process", false);
     private static final String sNetflixModel =
             SystemProperties.get("persist.sys.pihooks.netflix_model", "");
 
@@ -93,12 +91,6 @@ public final class PixelPropsUtils {
         propsToChangeGeneric.put("TYPE", "user");
         propsToChangeGeneric.put("TAGS", "release-keys");
     }
-
-    private static final Map<String, Object> propsToChangeDevice =
-            createGoogleSpoofProps(
-                Build.MODEL,
-                Build.FINGERPRINT
-            );
 
     private static final Map<String, Object> propsToChangePixelXL =
             createGoogleSpoofProps(
@@ -152,15 +144,6 @@ public final class PixelPropsUtils {
                 "com.nothing.smartcenter",
                 "in.startv.hotstar",
                 "jp.id_credit_sp2.android"
-        ));
-
-    private static final ArrayList<String> gmsProcessToChangePixel5a = 
-        new ArrayList<String> (
-            Arrays.asList(
-                "com.google.android.gms.gapps",
-                "com.google.android.gms.gservice",
-                "com.google.android.gms.learning",
-                "com.google.android.gms.persistent"
         ));
 
     private static final ArrayList<String> processToKeep = 
@@ -371,13 +354,8 @@ public final class PixelPropsUtils {
         }
 
         Map<String, Object> propsToChange = new HashMap<>();
-        if (gmsProcessToChangePixel5a.contains(processName)) {
-            if (!sDeviceIsPixel) {
-                propsToChange = propsToChangePixel5a;
-            } else if (sForceSpoofGmsProcess) {
-                propsToChange = propsToChangeDevice;
-            }
-        } else if (packagesToChangeRecentPixel.contains(processName)) {
+
+        if (packagesToChangeRecentPixel.contains(processName)) {
             propsToChange = propsToChangeRecentPixel;
         } else if (packagesToChangeRecentPixel.contains(packageName)) {
             propsToChange = propsToChangeRecentPixel;

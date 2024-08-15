@@ -77,7 +77,8 @@ public final class CustomFeaturesUtils {
         }
         if (packageName != null
                 && (packageName.equals("com.google.android.googlequicksearchbox")
-                || packageName.equals("com.google.android.apps.nexuslauncher"))) {
+                || packageName.equals("com.google.android.apps.nexuslauncher")
+                || packageName.equals("com.android.vending"))) {
             if (Arrays.asList(featuresPixel).contains(name)) return REPORT_TRUE;
             if (Arrays.asList(featuresPixelOthers).contains(name)) return REPORT_TRUE;
             if (Arrays.asList(featuresTensor).contains(name)) return REPORT_TRUE;

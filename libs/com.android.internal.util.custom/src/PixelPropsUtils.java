@@ -115,6 +115,7 @@ public final class PixelPropsUtils {
             Arrays.asList(
                 "com.amazon.avod.thirdpartyclient",
                 "com.android.chrome",
+                "com.android.vending",
                 "com.breel.wallpapers20",
                 "com.disney.disneyplus",
                 "com.google.android.apps.aiwallpapers",
